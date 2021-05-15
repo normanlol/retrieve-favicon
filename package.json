@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "cheerio": "*",
+    "got": "^11.8.2"
+  },
+  "name": "retrieve-favicon",
+  "description": "Favicon retriever written in Node.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normanlol/faviget.git"
+  },
+  "keywords": [
+    "favicon",
+    "favicon-retriever",
+    "favicon-get"
+  ],
+  "author": "normanlol",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/normanlol/faviget/issues"
+  },
+  "homepage": "https://github.com/normanlol/faviget#readme",
+  "directories": {
+    "test": "test"
+  }
+}
