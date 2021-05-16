@@ -59,7 +59,7 @@ exports.isIco = function(url, cb) {
     }).then(function(resp) {
         if (resp.headers["content-type"] == "image/x-icon") {cb(null, true);} else {cb(null, false)}
     }).catch(function(err) {
-        if (!error.response) {
+        if (!err.response) {
             cb(err, null);
         } else {
             if (error.response.headers["content-type"] == "image/x-icon") {cb(null, true);} else {cb(null, false)}
