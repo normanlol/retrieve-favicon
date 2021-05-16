@@ -23,7 +23,7 @@ exports.get = function(url, cb) {
         if ($("[rel='alternate icon']")) {e.push($("[rel='alternate icon']").attr("href"))}
         if ($("[rel='mask-icon']")) {e.push($("[rel='mask-icon']").attr("href"))}
         if ($("[rel='fluid-icon']")) {e.push($("[rel='fluid-icon']").attr("href"))}
-        e = refine(e);
+        e = refine(e, url);
         cb(null, e);
     }).catch(function(err) {
         if (err.response && err.response.body) {
@@ -36,7 +36,7 @@ exports.get = function(url, cb) {
             if ($("[rel='alternate icon']")) {e.push($("[rel='alternate icon']").attr("href"))}
             if ($("[rel='mask-icon']")) {e.push($("[rel='mask-icon']").attr("href"))}
             if ($("[rel='fluid-icon']")) {e.push($("[rel='fluid-icon']").attr("href"))}
-            e = refine(e);
+            e = refine(e, url);
             cb(null, e);
         } else {
             cb(err, null);
@@ -75,6 +75,9 @@ function refine(arr, url) {
             if (curr.startsWith("http://") | curr.startsWith("https://")) { n.push(curr); } else {
                 if (curr.startsWith("/")) {
                     var nc = parse(url, true).host + curr;
+                    n.push(nc);
+                } else {
+                    var nc = "http://" + curr;
                     n.push(nc);
                 }
             }

@@ -5,7 +5,7 @@
   },
   "name": "retrieve-favicon",
   "description": "Favicon retriever written in Node.",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
